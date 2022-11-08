@@ -45,7 +45,7 @@ export default function ScheduleList({}) {
     fetcher
   );
 
-  if (error) return <div>{JSON.stringify(error)}</div>;
+  if (error) {console.log(error)};
 
   if (!data)
     return (
