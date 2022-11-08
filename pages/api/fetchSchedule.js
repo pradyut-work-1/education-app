@@ -15,7 +15,6 @@ export default function handler(req, res) {
     } catch (error) {
       res.status(500).send({ error: error.message });
     } finally {
-      res.status(200).send("Fetch Completed");
     }
   };
 //   const { date } = req.query;
