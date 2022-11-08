@@ -1,3 +1,5 @@
+import { supabase } from "../../utils/supabaseClient";
+
 export default function handler(req, res) {
     const fetch = async (date) => {
         try 
