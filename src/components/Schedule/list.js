@@ -41,7 +41,7 @@ export default function ScheduleList({}) {
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, error } = useSWR(
-    "api/fetchSchedule?date=" + router.query.date,
+    "api/fetchSchedule",
     fetcher
   );
 

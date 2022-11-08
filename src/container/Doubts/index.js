@@ -18,6 +18,7 @@ import useSWR from "swr";
 export default function DoubtsContainer(params) {
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, error } = useSWR("api/fetchDoubts", fetcher);
+  
   if (error) return <div>{JSON.stringify(error)}</div>;
 
   if (!data) return <div>Loading</div>;
