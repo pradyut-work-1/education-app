@@ -16,9 +16,8 @@ export default function handler(req, res) {
                     res.status(500).send({ error: error.message })
                 }
     
-            if (data) {
                 res.status(200).json({ data });
-            }
+            
         } 
         catch (error) 
         {
