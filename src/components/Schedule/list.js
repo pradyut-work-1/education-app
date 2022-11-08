@@ -71,35 +71,36 @@ export default function ScheduleList({}) {
       </div>
     );
 
-  if (!data.data[0])
-    return (
-      <div>
-        <Grid.Container
-          gap={1.5}
-          justify="center"
-          css={{
-            paddingInline: 0,
-            alignSelf: "start",
-            "@sm": { pt: 75 },
-          }}
-        >
-          <Grid
-            xs
-            direction="column"
-            justify="center"
-            style={{ paddingInline: 0 }}
-          >
-            <Text h4 weight="bold">
-              No lectures Scheduled {" :("}
-            </Text>
-          </Grid>
-        </Grid.Container>
-      </div>
-    );
+  // if (!data.data[0])
+  //   return (
+  //     <div>
+  //       <Grid.Container
+  //         gap={1.5}
+  //         justify="center"
+  //         css={{
+  //           paddingInline: 0,
+  //           alignSelf: "start",
+  //           "@sm": { pt: 75 },
+  //         }}
+  //       >
+  //         <Grid
+  //           xs
+  //           direction="column"
+  //           justify="center"
+  //           style={{ paddingInline: 0 }}
+  //         >
+  //           <Text h4 weight="bold">
+  //             No lectures Scheduled {" :("}
+  //           </Text>
+  //         </Grid>
+  //       </Grid.Container>
+  //     </div>
+  //   );
 
   return (
     <div>
-      <Grid.Container
+      {JSON.stringify(data)}
+      {/* <Grid.Container
         gap={1.5}
         justify="center"
         css={{
@@ -122,7 +123,7 @@ export default function ScheduleList({}) {
                 ))}
           </div>
         ))}
-      </Grid.Container>
+      </Grid.Container> */}
     </div>
   );
 }
