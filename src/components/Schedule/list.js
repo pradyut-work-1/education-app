@@ -117,7 +117,7 @@ export default function ScheduleList({}) {
                   <ListCard
                     key={index}
                     title={data.subject}
-                    desc={data.start + " - " + data.end + " | Science Lecture"}
+                    desc={data.start + " - " + data.end + " | " + ( data.test ? " Test" : " Lecture")}
                   />
                 ))}
           </div>

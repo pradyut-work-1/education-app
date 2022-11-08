@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router';
 import Calendar from 'react-calendar'
 import { supabase } from '../../../utils/supabaseClient';
+import { Button } from '@nextui-org/react';
 
 export default function ScheduleCalender({ }) {
     const router = useRouter();
@@ -11,7 +12,7 @@ export default function ScheduleCalender({ }) {
     useEffect(() => {
         router.push({
             query: {
-                date: date.getFullYear() + "-" + date.getMonth() + '-' + date.getDate()
+                date: date.getFullYear() + "-" + (date.getMonth() + 1) + '-' + date.getDate()
             },
         })
       }, []);
@@ -20,7 +21,7 @@ export default function ScheduleCalender({ }) {
         changeDate(e);
         router.push({
             query: {
-                date: e.getFullYear() + "-" + e.getMonth() + '-' + e.getDate()
+                date: e.getFullYear() + "-" + (e.getMonth() + 1) + '-' + e.getDate()
             },
         })
     }

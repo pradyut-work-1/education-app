@@ -13,16 +13,15 @@ import "photoswipe/dist/photoswipe.css";
 import { Gallery, Item } from "react-photoswipe-gallery";
 import { useRouter } from "next/router";
 
-export default function ViewAssignmentView() {
+export default function ViewDoubtsView() {
   const router = useRouter();
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, error } = useSWR(
-    "../api/fetchAssignment?id=" + router.query.id,
+    "../api/fetchDoubt?id=" + router.query.id,
     fetcher
   );
 
   if (error) return <div>{JSON.stringify(error)}</div>;
-
   if (!data)
     return (
       <div>
@@ -33,31 +32,20 @@ export default function ViewAssignmentView() {
         </Grid.Container>
       </div>
     );
-  const item = { submitted: true };
   return (
     <>
-      {console.log(data)}
-      <main>
         <Card css={{mt: 15}}>
         <Card.Header>
-          <img
-            alt="nextui logo"
-            src="https://avatars.githubusercontent.com/u/86160567?s=200&v=4"
-            width="50px"
-            height="50px"
-          />
-          <Grid.Container css={{ pl: "$6" }}>
-            <Grid xs={12}>
+          
               <Text h3 css={{ lineHeight: "$xs", m: 0 }}>
-                {data.data.title}
+              {(data.data.subject == 1 ? "English" : null) ||
+              (data.data.subject == 2 ? "Hindi" : null) ||
+              (data.data.subject == 3 ? "Marathi" : null) ||
+              (data.data.subject == 4 ? "Science I" : null) ||
+              (data.data.subject == 5 ? "Science II" : null) ||
+              (data.data.subject == 6 ? "Maths I" : null) ||
+              (data.data.subject == 7 ? "Maths II" : null)}
               </Text>
-            </Grid>
-            <Grid xs={12}>
-              <Text size="$xs" css={{ color: "$accents8" }}>
-                {data.data.expiry}
-              </Text>
-            </Grid>
-          </Grid.Container>
 
           {/* <Text
             color={
@@ -90,7 +78,7 @@ export default function ViewAssignmentView() {
         <Card.Divider/>
         <Card.Body css={{}}>
           <Text size="$xl" css={{ color: "$accents8" }}>
-            {data.data.description}
+            {data.data.info}
           </Text>
         <Gallery withDownloadButton>
           {data.data.upload.map((url, index) => {
@@ -127,7 +115,6 @@ export default function ViewAssignmentView() {
           </Row>
         </Card.Footer>
 </Card>
-      </main>
     </>
   );
 }

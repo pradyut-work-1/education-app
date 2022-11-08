@@ -94,6 +94,7 @@ export default function ViewAssignmentSubmission() {
                   }
                   height={500}
                   width={500}
+                  key={index}
                 >
                   {({ ref, open }) => (
                     <img

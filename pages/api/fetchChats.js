@@ -3,20 +3,14 @@ import { useState } from 'react'
 import { supabase } from '../../utils/supabaseClient'
 
 export default function handler(req, res) {
-    
-    const { subject } = req.query;
-
-    const subjectArray = subject.split(',');
 
     const fetch = async () => {
         try 
         {
             
             let { data, error, status } = await supabase
-                .from('Assignments')
-                .select(`id, by ( Name ), title, description, expiry, subject `)
-                .eq('batch', 1234)
-                .in('subject', subjectArray)
+                .from('Chatroom')
+                .select(`by ( id, Name ), content `)
 
                 if (error && status !== 406) {
                     throw error
@@ -29,7 +23,7 @@ export default function handler(req, res) {
         } 
         catch (error) 
         {
-            res.status(500).send({ error: error.message })
+            res.status(500).send({ error: error })
         } 
         finally 
         {

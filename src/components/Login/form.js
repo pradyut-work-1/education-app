@@ -23,7 +23,7 @@ export default function LoginForm() {
                         redirectTo="http://localhost:3000/"
                         appearance={{ theme: ThemeSupa }}
                         supabaseClient={supabaseClient}
-                        providers={[]}
+                        providers={['']}
                         socialLayout="horizontal"
                     />
                 </Grid>
