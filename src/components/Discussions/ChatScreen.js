@@ -11,17 +11,15 @@ export default function DiscussionsChatScreen() {
     try {
       let { data, error } = await supabase
         .from("Chatroom")
-        .select(`by ( id, Name ), content, created_at`);
+        .select('user_id ( name, id ), created_at, content');
 
       if (error && status !== 406) {
         throw error;
       }
 
-      if (data) {
         setChatData(data);
-      }
     } catch (error) {
-      console.log("Error loading user data!");
+      console.log("Error loading chat data!");
       console.log(error);
     }
   };
@@ -46,7 +44,7 @@ export default function DiscussionsChatScreen() {
       fetchChats();
     }
   } catch (realtimeError) {
-    console.log("Error loading user data!");
+    console.log("Error loading realtime data!");
     console.log(realtimeError);
   }
 
@@ -58,12 +56,12 @@ export default function DiscussionsChatScreen() {
             <Grid.Container gap={0.5} justify="center" css={{ "@xs": { p: 0 } }}>
               {chatData.map((data) =>
               <>
-                {data.by.id === 123 ? (
+                {data.user_id.id === 123 ? (
                   <Sent content={data.content} date={data.created_at} />
                 ) : (
                   <Receive
                     date={data.created_at}
-                    by={data.by.Name}
+                    by={data.user_id.name}
                     content={data.content}
                   />
                 )}

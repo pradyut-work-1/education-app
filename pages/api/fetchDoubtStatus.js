@@ -13,7 +13,7 @@ export default function handler(req, res) {
             let { data, error, status } = await supabase
                 .from('Doubts_Response')
                 .select(`id`)
-                .eq('for', id)
+                .eq('doubt_id', id)
                 .single()
 
                 if (error && status !== 406) {

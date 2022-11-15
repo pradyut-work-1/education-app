@@ -12,7 +12,7 @@ export default function handler(req, res) {
             
             let { data, error, status } = await supabase
                 .from('Doubts')
-                .select(`by ( Name ), subject, info, upload `)
+                .select(`student_id ( name ), subject, info, upload `)
                 .eq('id', id)
                 .single()
 

@@ -12,8 +12,8 @@ export default function handler(req, res) {
             
             let { data, error, status } = await supabase
                 .from('Doubts_Response')
-                .select(`by ( Name ), info, upload `)
-                .eq('for', id)
+                .select(`teacher_id ( name ), info, upload `)
+                .eq('doubt_id', id)
                 .single()
 
                 if (error && status !== 406) {

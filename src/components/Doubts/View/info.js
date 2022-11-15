@@ -111,7 +111,7 @@ export default function ViewDoubtsView() {
         <Card.Divider/>
         <Card.Footer css={{  justifyItems: "flex-start" }}>
           <Row wrap="wrap" justify="space-between" align="center">
-            <Text b>{data.data.by.Name}</Text>
+            <Text b>{data.data.student_id.name}</Text>
           </Row>
         </Card.Footer>
 </Card>

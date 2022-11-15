@@ -1,6 +1,5 @@
 import {
   Navbar,
-  Link,
   Text,
   Avatar,
   Dropdown,
@@ -11,12 +10,13 @@ import {
   Container,
 } from "@nextui-org/react";
 import { styled } from "@nextui-org/react";
+import Link from "@nextui-org/react";
 
 export const Box = styled("div", {
   boxSizing: "border-box",
 });
 
-export default function TopBar({ children, back }) {
+function TopBar({ children, back }) {
   const collapseItems = [
     "Schedule",
     "Assignments",
@@ -112,11 +112,10 @@ export default function TopBar({ children, back }) {
                 isActive={index === 2}
               >
                 <Link
-                  color="inherit"
-                  css={{
+                  style={{ color: 'black',
                     minWidth: "100%",
                   }}
-                  href={item == "Schedule" ? "../index" : "../" + item}
+                  href={ "../" + item}
                 >
                   {item}
                 </Link>
@@ -151,14 +150,12 @@ export default function TopBar({ children, back }) {
                             index === collapseItems.length - 1 ? "$error" : "",
                           textAlign: "start",
                         }}
-                        isActive={index === 2}
                         light
                         auto
                         size="lg"
                       >
                         <Link
-                          color="inherit"
-                          css={{
+                          style={{ color: 'black',
                             minWidth: "100%",
                           }}
                           href={"../" + item}
@@ -181,3 +178,5 @@ export default function TopBar({ children, back }) {
     </>
   );
 }
+
+export default TopBar;

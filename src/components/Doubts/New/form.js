@@ -44,7 +44,7 @@ export default function NewDoubtForm({}) {
         subject: subject,
         info: content,
         upload: files,
-        by: 123
+        student_id: 123
       };
 
       let { error } = await supabase

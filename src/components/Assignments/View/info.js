@@ -33,10 +33,8 @@ export default function ViewAssignmentView() {
         </Grid.Container>
       </div>
     );
-  const item = { submitted: true };
   return (
     <>
-      {console.log(data)}
       <main>
         <Card css={{mt: 15}}>
         <Card.Header>
@@ -59,33 +57,7 @@ export default function ViewAssignmentView() {
             </Grid>
           </Grid.Container>
 
-          {/* <Text
-            color={
-              item.expired
-                ? "error"
-                : false || item.submitted
-                ? "success"
-                : false || item.pending
-                ? "warning"
-                : false
-            }
-            css={{
-              fontWeight: "$semibold",
-              fontSize: "$md",
-              'md': {
-                fontSize: "$lg"
-              }
-            }}
-            b
-          >
-            {item.expired
-              ? "Expired"
-              : false || item.submitted
-              ? "Submitted"
-              : false || item.pending
-              ? "Pending"
-              : false}
-          </Text> */}
+          
         </Card.Header>
         <Card.Divider/>
         <Card.Body css={{}}>
@@ -123,7 +95,7 @@ export default function ViewAssignmentView() {
         <Card.Divider/>
         <Card.Footer css={{  justifyItems: "flex-start" }}>
           <Row wrap="wrap" justify="space-between" align="center">
-            <Text b>{data.data.by.Name}</Text>
+            <Text b>{data.data.teacher_id.name}</Text>
           </Row>
         </Card.Footer>
 </Card>
