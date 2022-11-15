@@ -56,7 +56,7 @@ export default function FilesList(params) {
     data.data.map((item, index) => {
       FileRows.push({
         key: index,
-        by: item.by.Name,
+        by: item.teacher_id.name,
         type: item.type,
         name: item.name,
         date: item.on,

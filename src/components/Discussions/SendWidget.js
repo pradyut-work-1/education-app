@@ -11,7 +11,7 @@ export default function DiscussionsSendWidget() {
     try {
       const inputData = {
         content: formInputData,
-        by: 123,
+        user_id: 123,
       };
 
       let { error } = await supabase

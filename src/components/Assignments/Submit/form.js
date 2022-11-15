@@ -46,8 +46,8 @@ export default function SubmitAssignmentForm({}) {
       const inputData = {
         description: description,
         upload: files,
-        by: 123,
-        for: id,
+        student_id: 123,
+        assignment_id: id,
       };
 
       let { error } = await supabase

@@ -14,8 +14,8 @@ export default function handler(req, res) {
             
             let { data, error, status } = await supabase
                 .from('Assignments')
-                .select(`id, by ( Name ), title, description, expiry, subject `)
-                .eq('batch', 1234)
+                .select(`id, teacher_id ( name ), title, description, expiry, subject `)
+                .eq('batch_id', 1234)
                 .in('subject', subjectArray)
 
                 if (error && status !== 406) {

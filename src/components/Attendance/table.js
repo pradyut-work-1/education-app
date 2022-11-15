@@ -9,10 +9,6 @@ const [daysInMonthData, setDaysInMonth] = useState([])
       key: "date",
       label: "DATE",
     },
-    // {
-    //   key: "status",
-    //   label: "STATUS",
-    // },
     {
       key: "in",
       label: "IN",

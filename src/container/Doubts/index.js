@@ -31,7 +31,7 @@ console.log(data)
         {data.data.map((item, index) => (
           <DoubtsCard
           key={index}
-            by={item.by.Name}
+            by={item.student_id.name}
             subject={item.subject}
             doubt={item.info}
             index={index}

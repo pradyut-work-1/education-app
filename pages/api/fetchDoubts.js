@@ -10,7 +10,7 @@ export default function handler(req, res) {
             
             let { data, error, status } = await supabase
                 .from('Doubts')
-                .select(`by ( Name ), info, subject, id `)
+                .select(`student_id ( name ), info, subject, id `)
 
                 if (error && status !== 406) {
                     throw error

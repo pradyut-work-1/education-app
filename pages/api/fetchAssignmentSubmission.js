@@ -15,7 +15,7 @@ export default function handler(req, res) {
             let { data, error, status } = await supabase
                 .from('Assignments_Submissions')
                 .select(`description, upload`)
-                .match({for: id, by: 123})
+                .match({assignment_id: id, student_id: 123})
                 .single()
 
                 if (error && status !== 406) {

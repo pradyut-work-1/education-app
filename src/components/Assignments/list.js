@@ -180,6 +180,7 @@ export default function AssignmentsList({}) {
 
   return (
     <div>
+      {/* {JSON.stringify(data)} */}
       <Grid.Container gap={1.5} justify="flex-start">
         {data.data.map((data, index) => {
           const currentDate = new Date();
@@ -195,7 +196,7 @@ export default function AssignmentsList({}) {
                 desc={data.description}
                 expiry={data.expiry}
                 subject={data.subject}
-                by={data.by.Name}
+                by={data.teacher_id.Name}
                 expired={checkExpiry ? true : false}
               />
             </>

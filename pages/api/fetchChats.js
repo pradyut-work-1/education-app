@@ -10,7 +10,7 @@ export default function handler(req, res) {
             
             let { data, error, status } = await supabase
                 .from('Chatroom')
-                .select(`by ( id, Name ), content `)
+                .select(`user_id ( id, name ), content `)
 
                 if (error && status !== 406) {
                     throw error

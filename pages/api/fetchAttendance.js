@@ -12,7 +12,7 @@ export default function handler(req, res) {
       let { data, error, status } = await supabase
         .from("Attendance")
         .select(`on, in, out`)
-        .match({ for: 123 })
+        .match({ student_id: 123 })
 
       if (error && status !== 406) {
         throw error;

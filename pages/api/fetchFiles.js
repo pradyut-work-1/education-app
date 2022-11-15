@@ -10,8 +10,8 @@ export default function handler(req, res) {
             
             let { data, error, status } = await supabase
                 .from('Files')
-                .select(`by ( Name ), url, type, on, name`)
-                .eq('batch', 1234)
+                .select(`teacher_id ( name ), url, type, on, name`)
+                .eq('batch_id', 1234)
 
                 if (error && status !== 406) {
                     throw error
